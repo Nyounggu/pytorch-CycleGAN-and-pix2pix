@@ -53,7 +53,7 @@ if __name__ == '__main__':
                 model.compute_visuals()    #모델의 시각화 계산, 모델의 출력을 시각적으로 표현하는데 사용되는 이미지나 그래프 생성           visualizer.display_current_results(model.get_current_visuals(), epoch, save_result) #현재 결과를 시각화 하고, save_result가 참인 경우 HTML 파일에 결과를 저장
             if total_iters % opt.print_freq == 0:    # 일정 주기 마다 결과를 화면에 출력하기 위한 if문,print training losses and save logging information to the disk
                 losses = model.get_current_losses() #모델의 손실율 가져옴
-                t_comp = (t1ime.time() - iter_start_time) / opt.batch_size 
+                t_comp = (time.time() - iter_start_time) / opt.batch_size 
                 visualizer.print_current_losses(epoch, epoch_iter, losses, t_comp, t_data)#에폭,에폭 내 반복 횟수, 현재 손실, 계산시간 및 데이터 로딩시간을 인수로 받음
 
                 if opt.display_id > 0: 
